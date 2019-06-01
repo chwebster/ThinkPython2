@@ -18,6 +18,24 @@ class Point:
     attributes: x, y
     """
 
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return '(%g, %g)' % (self.x, self.y)
+
+    def __add__(self, other):
+        if isinstance(other, Point):
+            return Point(self.x + other.x, self.y + other.y)
+        elif isinstance(other, tuple):
+            return Point(self.x + other[0], self.y + other[1])
+        else:
+            return Point(self.x + other, self.y + other)
+
+    def __radd__(self, other):
+        return self.__add__(other)
+
 
 def print_point(p):
     """Print a Point object in human-readable format."""
