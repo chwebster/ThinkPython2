@@ -58,3 +58,6 @@ box.corner.y = 4
 move_rectangle(box, 3, 1)
 print('New corner is ', end = "")
 pt.print_point(box.corner)
+
+import chw_ex_ch14 as chw
+chw.blah()
